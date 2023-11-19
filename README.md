@@ -8,12 +8,15 @@ In this repository you will find my solution to the Medcloud Coding Challenge 9.
 
 ## Instructions
 
-First you need to clone this project:
+First you need to clone this project and enter the folder:
 
 ```bash
     git clone git@github.com:juan-cassius/development-challenge-nine.git
+    cd development-challenge-nine
 ```
+
 Make Sure that you are not using the ports below in your machine. If you want to use other ports instead just change the ports on the docker-compose.yaml file on the root of this project:
+
 ```
 3000 // Frontend Port
 3001 // Backend Port
@@ -27,14 +30,53 @@ Then you'll have to setup the 3 container (frontend, backend, db):
 ```
 
 This may take long, the backend container depends on the status check of the db container. After this step you are good to go. Just use the links bellow to use the services:
+
 ```bash
 http://localhost:3000/ <- This is the frontend address
 http://localhost:3001/ <- This is the backend address
 ```
 
+Bellow you can find some previews of the project:
+
+### Home Page
+
+![Home Page](./previews/HomePage.png)
+
+In this page you can see all the patients names. In this page you can add, edit or remove patients.
+To see all the patient data just click on the name and you'll be redirected to the details page.
+
+## Details Page
+
+![Details Page](./previews/DetailsPage.png)
+
+Here you can remove, edit or see all the patient data.
+
+## Create Patient Page
+
+![Creation Page](./previews/CreatePage.png)
+
+Through this form you can add a patient.
+
+## Edit Patient Page
+
+![Edit Page](./previews/EditPage.png)
+
+This page is the same as the above, the only difference is that the patient data is already in the form.
+!!!!YOU CAN ONLY SUBMIT THIS FORM IF THERE IS A MODIFICATION!!!! (Otherwise you'll get an error alert).
+
+## About Page
+
+![AboutMe Page](./previews/AboutMe.png)
+
+In this page you can find some contacts and info about me. Feel free to contact any time!
+
+# Thank you for visiting my code solution!
+
+Bellow you have the original README.md of this project:
+
 ![logo medcloud-03 white copy](https://user-images.githubusercontent.com/46347123/158176045-de9fefb0-35e2-4515-83ff-c132608aa870.png)
 
-About Medcloud: 
+About Medcloud:
 
 We make exams and medical data management more flexible, secure and effective by accelerating the transition from clinics and hospitals to the cloud.
 The RIS and PACS systems have been practically the same for the past 25 years. Interoperability problems, high costs and a lack of understanding about the patient's access to his medical records.
@@ -56,7 +98,7 @@ Medcloud's challenge for Dev Full Stack.
 - You need to develop both the front-end and the back-end.
 - In the front-end you MUST use React.
 - In the back-end you MUST use Node.js.
-- The patient data should not be static  (You MUST use a cloud database or a local database).
+- The patient data should not be static (You MUST use a cloud database or a local database).
 - Field validation (date, required fields, etc).
 
 ## Extra Points
@@ -87,7 +129,7 @@ According to the above criteria, we will evaluate your test in order to proceed 
 
 ## Delivery
 
-You MUST fork this repository to your own account and push you code to it. 
+You MUST fork this repository to your own account and push you code to it.
 When you finish it, you must send a email to cv@medcloud.com.br with your curriculum and your fork.
 
 Good luck! Any doubts, feel free to send an email to cv@medcloud.com.br.
