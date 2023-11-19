@@ -20,7 +20,7 @@ Make Sure that you are not using the ports below in your machine. If you want to
 ```
 3000 // Frontend Port
 3001 // Backend Port
-3006 // Database Port
+3306 // Database Port
 ```
 
 Then you'll have to setup the 3 container (frontend, backend, db):
