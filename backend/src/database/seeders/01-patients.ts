@@ -20,7 +20,7 @@ export default {
                 },        {
                     fullName: 'Pedro Pedrosa',
                     birthDate: '2000-10-04',
-                    email: 'pedropedroso@gbol.com',
+                    email: 'pedropedra@gbol.com',
                 },
                 {
                     fullName: 'Maria da Silva',

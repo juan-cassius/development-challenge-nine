@@ -5,6 +5,7 @@ import { IPatient, IPatientWithAddress } from "../interfaces/patients/IPatient";
 import { IPatientModel } from "../interfaces/patients/IPatientModel";
 import { ServiceMessage, ServiceResponse } from "../interfaces/ServiceResponse";
 import { IAddressModel } from "../interfaces/addresses/IAddressModel";
+// import sequelize from "../database/models";  -- Aqui farei o tratamento da transaction dos updates futuramente
 
 export default class PatientService {
     constructor(
@@ -40,17 +41,28 @@ export default class PatientService {
 
         if (!patientFound) return { status: 'NOT_FOUND', data: { message: `Patient ${id} not found` } };
 
-        //Essa foi a solução que encontrei após inúmeras tentativas de fazer o update conjunto das tabelas.
-        const updatePatient = await this.patientModel.update(id, patient);
-        const updateAddress = await this.addressModel.update(id, patient.address);
+        // const t = await sequelize.transaction(); -- Aqui farei o tratamento da transaction dos updates futuramente
 
-        if (!updatePatient && !updateAddress) {
-            return {
-                status: 'CONFLICT',
-                data: { message: `There are no updates to perform in Patient ${id} or his address` }
-            };
-        }
+        // try { 
+
+            const updatePatient = await this.patientModel.update(id, patient);
+            const updateAddress = await this.addressModel.update(id, patient.address);
+
+            if (!updatePatient && !updateAddress) {
+                return {
+                    status: 'CONFLICT',
+                    data: { message: `There are no updates to perform in Patient ${id} or his address` }
+                };
+            }
+
+        //     await t.commit();  -- Aqui farei o tratamento da transaction dos updates futuramente
+
+        // } catch (error) {  -- Aqui farei o tratamento da transaction dos updates futuramente
+        //     await t.rollback()
+        // }
+
         return { status: 'SUCCESSFUL', data: { message: 'Patient updated' } };
+
     }
 
     public async deletePatient(id: number): Promise<ServiceResponse<ServiceMessage>> {

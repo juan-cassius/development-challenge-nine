@@ -21,7 +21,7 @@ export default class PatientModel implements IPatientModel {
         return convertedData;
     }
 
-    async findAll(): Promise<IPatientWithAddress[]> { // tinha um array de Ipatient
+    async findAll(): Promise<IPatientWithAddress[]> {
         const dbData = await this.model.findAll({
             include: [{
                 model: this.addressModel,
@@ -32,7 +32,7 @@ export default class PatientModel implements IPatientModel {
 
         const convertedData: IPatientWithAddress[] = dbData.map(({ id, fullName, birthDate, email, address }: IPatient | any) => ({ id, fullName, birthDate, email, address }));
 
-        return convertedData;  // return dbData.map(({ id, fullName, birthDate, email }) => ({ id, fullName, birthDate, email }));
+        return convertedData;
     }
 
     async findById(id: number): Promise<IPatientWithAddress | null> {

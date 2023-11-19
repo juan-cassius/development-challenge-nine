@@ -21,6 +21,7 @@ exports.default = {
             email: {
                 type: sequelize_1.DataTypes.STRING(100),
                 allowNull: false,
+                unique: true,
             },
         });
     },
