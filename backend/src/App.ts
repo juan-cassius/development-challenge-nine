@@ -21,7 +21,8 @@ class App {
     this.app.get('/', (_req, res) => res.status(200).send('MedCloud API no ar!'));
   }
 
-  //Aqui eu defino as rotas da minha aplicação pelo index da pasta routes e lá eu faço a distribuição das rotas.
+  // Aqui eu defino as rotas da minha aplicação pelo index
+  // da pasta routes e lá eu faço a distribuição das rotas.
   private routes(): void {
     this.app.use(router);
   }
@@ -29,7 +30,6 @@ class App {
   public start(PORT: string | number): void {
     this.app.listen(PORT, () => console.log(`Backend no ar na porta ${PORT}!`));
   }
-
 }
 
 export default App;
