@@ -19,6 +19,7 @@ export default class PatientModel implements IPatientModel {
         const convertedData: IPatientWithAddress = { id, fullName, birthDate, email, address: data.address };
 
         return convertedData;
+
     }
 
     async findAll(): Promise<IPatientWithAddress[]> {
@@ -52,6 +53,7 @@ export default class PatientModel implements IPatientModel {
     }
 
     async update(id: number, data: Partial<NewEntity<IPatientWithAddress>>): Promise<IPatientWithAddress | null> {
+
         const [affectedRows] = await this.model.update(data, {
             where: { id },
         });

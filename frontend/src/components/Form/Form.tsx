@@ -1,3 +1,4 @@
+// import { AxiosError } from "axios";
 import React, { useState, ChangeEvent, FormEvent, useEffect, ChangeEventHandler } from "react";
 import { TextField, Button, Grid, Typography } from "@mui/material";
 import Swal from "sweetalert2";
@@ -5,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { IPatientWithAddress } from "../../interfaces";
 import { usePatient } from "../../hooks/usePatient";
 import './Form.css';
+import { AxiosError } from "axios";
 
 interface PatientFormProps {
     initialPatient?: IPatientWithAddress;
@@ -151,14 +153,15 @@ const PatientForm: React.FC<PatientFormProps> = () => {
             });
             navigate("/");
         } catch (error) {
-            console.error("Erro ao salvar paciente:", error);
-            Swal.fire({
-                title: "Erro ao atualizar paciente!",
-                text: "Para atualizar a pessoa paciente é necessário alterações.",
-                icon: "error",
-                showConfirmButton: false,
-                timer: 2500,
-            });
+            console.error("Erro ao manter paciente:", error);
+            if (error instanceof AxiosError)
+                Swal.fire({
+                    title: "Erro ao manter paciente!",
+                    text: error.response?.data.message,
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 2500,
+                });
         }
     };
 

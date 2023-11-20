@@ -42,25 +42,20 @@ export default class PatientService {
         if (!patientFound) return { status: 'NOT_FOUND', data: { message: `Patient ${id} not found` } };
 
         // const t = await sequelize.transaction(); -- Aqui farei o tratamento da transaction dos updates futuramente
-
         // try { 
+        const updatePatient = await this.patientModel.update(id, patient);
+        const updateAddress = await this.addressModel.update(id, patient.address);
 
-            const updatePatient = await this.patientModel.update(id, patient);
-            const updateAddress = await this.addressModel.update(id, patient.address);
-
-            if (!updatePatient && !updateAddress) {
-                return {
-                    status: 'CONFLICT',
-                    data: { message: `There are no updates to perform in Patient ${id} or his address` }
-                };
-            }
-
+        if (!updatePatient && !updateAddress) {
+            return {
+                status: 'CONFLICT',
+                data: { message: `There are no updates to perform in this patientor his address` }
+            };
+        }
         //     await t.commit();  -- Aqui farei o tratamento da transaction dos updates futuramente
-
         // } catch (error) {  -- Aqui farei o tratamento da transaction dos updates futuramente
         //     await t.rollback()
         // }
-
         return { status: 'SUCCESSFUL', data: { message: 'Patient updated' } };
 
     }

@@ -37,7 +37,6 @@ SequelizePatient.init({
     email: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true,
     },
 }, {
     sequelize: db,
