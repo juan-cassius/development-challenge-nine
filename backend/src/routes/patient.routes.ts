@@ -1,6 +1,6 @@
-import { Request, Response, Router } from "express";
-import PatientController from "../controllers/PatientController";
-import Validations from "../middlewares/Validation";
+import { Request, Response, Router } from 'express';
+import PatientController from '../controllers/PatientController';
+import Validations from '../middlewares/Validation';
 
 const patientController = new PatientController();
 
@@ -13,4 +13,3 @@ router.put('/:id', Validations.validatePatient, (req: Request, res: Response) =>
 router.delete('/:id', (req: Request, res: Response) => patientController.deletePatient(req, res));
 
 export default router;
-

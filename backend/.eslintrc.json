@@ -1,0 +1,24 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "settings": {
+
+      },
+      "rules": {
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "no-useless-constructor": "off",
+        "no-empty-function": "off",
+        "no-use-before-define": "off"
+      }
+}

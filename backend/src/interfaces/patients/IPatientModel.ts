@@ -1,5 +1,5 @@
-import { IPatient, IPatientWithAddress } from "./IPatient";
-import { NewEntity } from "..";
+import { IPatient, IPatientWithAddress } from './IPatient';
+import { NewEntity } from '..';
 
 export interface IPatientModel {
     create(data: Partial<IPatientWithAddress>): Promise<IPatientWithAddress>,

@@ -1,4 +1,4 @@
-import { IAddress } from "../addresses/IAddress";
+import { IAddress } from '../addresses/IAddress';
 
 export interface IPatient {
     id: number;
