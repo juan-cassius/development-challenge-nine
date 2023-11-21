@@ -40,10 +40,9 @@ Bellow you can find some previews of the project:
 
 ### Home Page
 
-![Home Page](./previews/HomePage.png)
+![Home Page](./previews/Home.png)
 
-In this page you can see all the patients names. In this page you can add, edit or remove patients.
-To see all the patient data just click on the name and you'll be redirected to the details page.
+In this page you can see all the patients names, search by name. In this page you can add, edit or remove patients. Theres pagination limited to 5 rows per page. To see all the patient data just click on the name and you'll be redirected to the details page.
 
 ## Details Page
 
