@@ -13,7 +13,10 @@ export default function Home() {
     <div className='home-div'>
       <NavBar />
       <div className='home-body'>
-        <Typography variant='h4' className='title-element'>Pacientes</Typography>
+        <Typography
+          variant='h4'
+          className='title-element'
+        >Pacientes</Typography>
         <Main />
         <AddPatient />
       </div>

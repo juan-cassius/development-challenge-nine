@@ -40,14 +40,13 @@ export default function Main() {
 
   return (
     <div className='main-main-div'>
-      <div className='search-bar'>
         <TextField
+          className='search-element'
           label="Pesquisa por nome"
           variant="outlined"
           value={searchTerm}
           onChange={handleSearchChange}
         />
-      </div>
       <div className='patient-list-div'>
         {getPaginatedPatients().map((patient) => (
           <PatientCard key={patient.id} patient={patient} />
