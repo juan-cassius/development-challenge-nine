@@ -4,7 +4,6 @@ import { Request, Response, NextFunction } from 'express';
 class Validations {
   static validatePatient(req: Request, res: Response, next: NextFunction): Response | void {
     const patient = req.body;
-    console.log(patient);
 
     const requiredKeys = ['fullName', 'birthDate', 'email'];
     const addressRequiredKeys = ['street', 'number', 'district', 'city', 'state', 'country'];

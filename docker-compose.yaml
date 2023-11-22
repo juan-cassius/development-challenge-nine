@@ -46,5 +46,5 @@ services:
       timeout: 10s
       retries: 5
     volumes:
-      # Para testes sem o sequelize eu poderei simplesmente adicionar SQL por meio da pasta definida
+     # Para testes sem o sequelize eu poderei simplesmente adicionar SQL por meio da pasta definida
       - ./sql:/docker-entrypoint-initdb.d
