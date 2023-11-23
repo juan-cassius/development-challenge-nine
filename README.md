@@ -37,6 +37,13 @@ Make Sure that you are not using the ports below in your machine. If you want to
 3001 // Backend Port
 3306 // Database Port
 ```
+To change them just find the "ports" part of the service you want to custom:
+
+```
+    service_name:     # Find the service you want to change the port
+        ports:
+            XXXX:0000 # Change the left number to the port you need!
+```
 
 Then you'll have to setup the 3 container (frontend, backend, db):
 
