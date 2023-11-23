@@ -6,6 +6,8 @@ COPY package*.json ./
 
 RUN npm install
 
+USER node
+
 COPY . .
 
 ENTRYPOINT [ "npm", "run" ]

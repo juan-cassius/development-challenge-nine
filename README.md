@@ -1,5 +1,18 @@
 # Development challenge
 
+## Welcome to the "Would change" branch!
+
+Here I'll update the software with the improvements I would do if there is no time limit to the challenge.
+Things that I have changed 'til this moment:
+
+- Added Pagination
+- Added SearchBar
+- Backend: Validation to Address keys
+- Backend: Empty fields validation
+- Added Integration tests to all CRUD operations
+
+##
+
 In this repository you will find my solution to the Medcloud Coding Challenge 9. The requirements to deliver this challenge are on the end of this document.
 
 ## Requirements to run this project
