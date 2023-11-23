@@ -10,6 +10,8 @@ Things that I have changed 'til this moment:
 - Backend: Validation to Address keys
 - Backend: Empty fields validation
 - Added Integration tests to all CRUD operations
+- Fixed container permission issue
+
 
 ##
 
