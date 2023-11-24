@@ -46,6 +46,7 @@ export default function Main() {
           variant="outlined"
           value={searchTerm}
           onChange={handleSearchChange}
+          style={ {backgroundColor: '#fff'} }
         />
       <div className='patient-list-div'>
         {getPaginatedPatients().map((patient) => (
