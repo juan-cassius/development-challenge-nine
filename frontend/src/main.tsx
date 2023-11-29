@@ -7,6 +7,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <PatientProvider>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
   </PatientProvider>
 )

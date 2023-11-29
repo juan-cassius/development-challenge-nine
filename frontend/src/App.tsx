@@ -7,8 +7,6 @@ import CreatePatient from './pages/CreatePatient/CreatePatient'
 import PatientDetails from './pages/PatientDetails/PatientDetails'
 import LoginPage from './pages/Login/LoginPage'
 function App() {
-
-
   return (
       <Routes>
         <Route path='/' element={<Home />} />
