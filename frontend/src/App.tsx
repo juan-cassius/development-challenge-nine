@@ -5,6 +5,7 @@ import About from './pages/About/About'
 import EditPatient from './pages/EditPatient/EditPatient'
 import CreatePatient from './pages/CreatePatient/CreatePatient'
 import PatientDetails from './pages/PatientDetails/PatientDetails'
+import LoginPage from './pages/Login/LoginPage'
 function App() {
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/add' element={<CreatePatient />} />
         <Route path='/details/:id' element={<PatientDetails />} />
         <Route path='/edit/:id' element={<EditPatient />} />
+        <Route path='/login' element={<LoginPage />} />
         <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
   )
