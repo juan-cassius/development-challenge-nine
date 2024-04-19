@@ -13,12 +13,6 @@ const fetch = axios.create({
         'Accept': 'application/json',
     },
 });
- 
-// const patientApi = async (method:Method, endpoint:string, body: object) => {
-//     fetch.request({method: method, url:endpoint, data:body})
-//     .then(({status, data}) => ({status, data}))
-// }
-
 
 
 export default fetch;

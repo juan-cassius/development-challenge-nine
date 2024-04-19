@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const userItem = localStorage.getItem('user');
+  const userName = userItem ? JSON.parse(userItem) : null;
 
   const inMenuButtonStyle = {
     color: '#f5f5f5',
@@ -59,7 +61,7 @@ function NavBar() {
           <Box className='user-info'>
             <Avatar alt='user-picture' />
             <Typography variant='body1' component='div' className='user-name'>
-              Nome do Usuário
+              {userName || 'Usuário'}
             </Typography>
           </Box>
         </Box>

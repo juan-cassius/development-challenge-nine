@@ -1,9 +1,12 @@
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material'
 import medcloudLink from '../../assets/medcloud-login.png'
 import './LoginForm.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { useUser } from '../../hooks/useUser'
+import Swal from 'sweetalert2'
 function LoginForm() {
+    const { login } = useUser()
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -12,18 +15,46 @@ function LoginForm() {
     const handleFormChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
         setFormData({ ...formData, [name]: value })
-        console.log(formData);
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    useEffect(() => {  
+        console.log(formData);
+    }, [formData]);
+
+        
+
+    const handleSubmit = async  (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
         const { email, password } = formData
 
         if (!email || !password) {
-            alert('Preencha todos os campos!')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Preencha todos os campos!',
+                timer: 1500,
+            })
             return
         }
+            const loginResponse = await login(formData)
+            if ('token' in loginResponse && 'user' in loginResponse) {
+                Swal.fire({
+                    title: "Login realizado com sucesso!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(() => {
+                    window.location.href = '/'
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Email ou senha incorretos!',
+                    timer: 1500,
+                })
+            }
     }
 
     const [showPassword, setShowPassword] = useState(false)
@@ -33,7 +64,6 @@ function LoginForm() {
     return (
         <div className='main-login-div'>
             <form
-                className='login-form-div'
                 onSubmit={handleSubmit}
             >
                 <img src={medcloudLink} alt="Medcloud" className='medcloud-logo' />

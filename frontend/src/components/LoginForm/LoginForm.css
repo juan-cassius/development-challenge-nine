@@ -1,9 +1,8 @@
 .main-login-div {
   align-items: center;
   background-attachment: fixed;
-  background-image: url('../../assets/background.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(143,184,131);
+  background: linear-gradient(138deg, rgba(143,184,131,1) 0%, rgba(67,148,62,1) 14%, rgba(0,0,0,1) 100%);
   background-position: 0px 0px;
   height: 100vh;
   display: flex;

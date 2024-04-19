@@ -5,7 +5,7 @@ services:
     ports:
       - 3000:3000
     restart: always
-    container_name: medcloud_frontend
+    container_name: pa_frontend
     depends_on:
       - backend
     volumes:
@@ -18,12 +18,12 @@ services:
       - DB_USER=root
       - DB_PASSWORD=password
       - DB_HOST=db
-      - DB_NAME=PatientManagment
+      - DB_NAME=PADB
       - JWT_SECRET=secret123 #Caso eu venha a utilizar um sistema de autenticação de usuário.
     working_dir: /app
     volumes:
       - ./backend/:/app/
-    container_name: medcloud_backend
+    container_name: pa_backend
     restart: always
     depends_on:
       db:
@@ -31,12 +31,12 @@ services:
 
   db:
     image: mysql:8.0.32
-    container_name: medcloud_db
+    container_name: pa_db
     restart: always
     environment:
       # Aqui eu defino as variaveis de ambiente para o banco
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: PatientManagment
+      MYSQL_DATABASE: PADB
     ports:
       - 3306:3306
       - 33060:33060
