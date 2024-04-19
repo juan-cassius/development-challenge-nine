@@ -44,6 +44,9 @@ export default class UserService {
       status: 'SUCCESSFUL',
       data: {
         token,
+        user: {
+          name: user.name,
+        },
       },
     };
   }
